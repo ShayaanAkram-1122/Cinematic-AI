@@ -1,0 +1,27 @@
+# Virtual environments
+.venv/
+venv/
+**/.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.Python
+*.so
+.pytest_cache/
+
+# OS
+.DS_Store
+
+# --- Large / generated data (do not push to GitHub) ---
+# MovieLens ratings: often 800MB+ — download from https://grouplens.org/datasets/movielens/
+Dataset/ml-32m/ratings.csv
+
+# Optional: also large; uncomment if push still fails or you want a smaller repo
+# Dataset/ml-32m/tags.csv
+# Dataset/wiki_movie_plots_deduped.csv
+
+# Trained model (regenerates locally)
+movie_recommender/models/*.pkl
+movie_recommender/models/*.json
+!movie_recommender/models/.gitkeep

@@ -53,6 +53,20 @@ If your clone only contains `movie_recommender/`, add a `Dataset/` sibling or ed
 
 ---
 
+## Download the datasets (direct links)
+
+Unzip / place files so paths match the tree in **Repository layout** above.
+
+| What you need | Where to get it |
+|-----------------|-----------------|
+| **MovieLens 32M** (`movies.csv`, `links.csv`, `ratings.csv`, `tags.csv`) | **Dataset page:** [MovieLens 32M — GroupLens](https://grouplens.org/datasets/movielens/32m/) — **Direct ZIP:** [`https://files.grouplens.org/datasets/movielens/ml-32m.zip`](https://files.grouplens.org/datasets/movielens/ml-32m.zip) — Unzip and copy the `ml-32m` folder contents into `Dataset/ml-32m/`. |
+| **TMDB-style metadata** (`top_rated_movies.csv`) | This repo expects columns: `id`, `title`, `overview`, `release_date`, `popularity`, `vote_average`, `vote_count`. You can build a CSV from the [TMDB API](https://developer.themoviedb.org/docs/getting-started) or start from a public export such as [The Movies Dataset (Kaggle)](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset) and adapt column names to match `movies_metadata.csv` / credits as needed. Save as `Dataset/top_rated_movies.csv`. |
+| **Wikipedia plots** (`wiki_movie_plots_deduped.csv`) | Common sources: [Wikipedia Movie Plots (Kaggle)](https://www.kaggle.com/datasets/jrobischon/wikipedia-movie-plots) or [wiki_movie_plots_deduped (Kaggle)](https://www.kaggle.com/datasets/kalashvasaniya/wiki-movie-plots-deduped). Download the CSV and save as `Dataset/wiki_movie_plots_deduped.csv`. If column names differ from the app, align them with `movie_recommender/modules/data_loader.py` (wiki merge). |
+
+**GitHub note:** `ratings.csv` is very large and is **gitignored** in this repo. Clone the code, then download **`ml-32m.zip`** and add `ratings.csv` locally (see root `.gitignore`).
+
+---
+
 ## Requirements
 
 - **Python 3.10+** (3.11–3.14 tested in development; use a venv).
